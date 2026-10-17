@@ -1,0 +1,14 @@
+.local/
+target/
+node_modules/
+.git/
+.env
+.env.*
+package-lock.json
+**/*.sql
+**/*.ps1
+Dockerfile
+.gitignore
+.dockerignore
+.prettierignore
+src/test/resources/mockito-extensions/

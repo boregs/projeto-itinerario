@@ -1,0 +1,14 @@
+**/bin/
+**/obj/
+**/node_modules/
+**/.next/
+.env
+.env.*
+!.env.example
+.local/
+TestResults/
+*.user
+**/target/
+.idea/
+*.iml
+CHANGELOG_DEV.md

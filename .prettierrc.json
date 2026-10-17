@@ -1,0 +1,11 @@
+{
+  "plugins": ["prettier-plugin-java", "@prettier/plugin-xml"],
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "endOfLine": "lf",
+  "overrides": [
+    { "files": "*.java", "options": { "tabWidth": 4 } },
+    { "files": "*.xml", "options": { "xmlWhitespaceSensitivity": "ignore" } }
+  ]
+}
