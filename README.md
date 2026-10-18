@@ -10,7 +10,9 @@ Implementação inicial do [SDD](SDD_plataforma_mentoria_aprendizagem.md), adapt
 - JUnit 5, MockMvc e Spring Security Test. H2 em modo PostgreSQL somente nos testes locais.
 - Caffeine mantém contadores limitados de autenticação em memória (10 requisições/minuto/IP); não é cache de dados da aplicação.
 
-O frontend Next.js + TypeScript permanece previsto no SDD e ainda não foi criado.
+O frontend Next.js + TypeScript ainda não foi criado. Sua implementação independente, inicialmente com dados simulados, está especificada no [SDD de frontend](SDD_frontend_plataforma_mentoria_aprendizagem.md).
+
+O primeiro marco do frontend está disponível em [`frontend/`](frontend/README.md): uma demonstração mobile-first da área de aprendizagem do estudante, com cinco matérias, atividades gamificadas e progresso persistido localmente. Mentorias e áreas de mentor e administrador permanecem pendentes.
 
 ## Executar
 

@@ -7,8 +7,19 @@
 !.env.example
 .local/
 TestResults/
+**/test-results/
+**/playwright-report/
+**/coverage/
+**/*.tsbuildinfo
 *.user
 **/target/
 .idea/
 *.iml
 CHANGELOG_DEV.md
+
+# Keep new backend-only files out of frontend-focused changes.
+/database/
+/docs/
+/scripts/
+/src/
+/SDD_frontend_plataforma_mentoria_aprendizagem.md
