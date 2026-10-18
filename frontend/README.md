@@ -4,7 +4,7 @@ Aplicação independente em Next.js, React e TypeScript para validar a experiên
 
 ## Executar
 
-Requer Node.js compatível com Next.js 16.
+Requer Node.js 24.15.0 ou mais recente. A versão mínima também é validada pelo npm para evitar falhas tardias nas ferramentas de teste.
 
 ```sh
 npm install
