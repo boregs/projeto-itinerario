@@ -60,7 +60,11 @@ export default function StudentMentorshipsPage() {
         <h2>Encontros</h2>
         <div className="record-grid">
           {mentorships.data?.map((item) => (
-            <Link className="card record" href={`/aluno/mentorias/${item.id}`} key={item.id}>
+            <Link
+              className="card record"
+              href={`/aluno/mentorias/detalhes?id=${encodeURIComponent(item.id)}`}
+              key={item.id}
+            >
               <div className="record-top">
                 <span>{item.area}</span>
                 <Status value={item.status} />

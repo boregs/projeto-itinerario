@@ -2,14 +2,14 @@
 
 import { ArrowLeft, Calendar, UserRound } from "lucide-react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { ErrorState, LoadingState } from "@/components/query-state";
 import { Status } from "@/components/status";
 import { platformService } from "@/services/platform-service";
 
 export default function StudentMentorshipPage() {
-  const { id } = useParams<{ id: string }>();
+  const id = useSearchParams().get("id") ?? "";
   const query = useQuery({
     queryKey: ["mentorship", id],
     queryFn: () => platformService.getMentorship(id),

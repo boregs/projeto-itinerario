@@ -1,5 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
+const staticExport = process.env.E2E_STATIC === "true";
+
 export default defineConfig({
   testDir: "./tests/e2e",
   fullyParallel: true,
@@ -8,8 +10,8 @@ export default defineConfig({
   workers: 1,
   use: { baseURL: "http://localhost:3000", trace: "on-first-retry" },
   webServer: {
-    command: "npm run dev",
-    url: "http://localhost:3000",
+    command: staticExport ? "npm run preview:pages" : "npm run dev",
+    url: staticExport ? "http://localhost:3000/projeto-itinerario/" : "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
   },
   projects: [

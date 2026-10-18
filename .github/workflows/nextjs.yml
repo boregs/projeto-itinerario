@@ -22,13 +22,19 @@ jobs:
         working-directory: frontend
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
           cache-dependency-path: frontend/package-lock.json
       - run: npm ci
-      - run: npm run build
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build:pages
+      - run: npx playwright install --with-deps chromium webkit
+      - run: npm run test:e2e:pages
       - uses: actions/upload-pages-artifact@v3
         with:
           path: frontend/out

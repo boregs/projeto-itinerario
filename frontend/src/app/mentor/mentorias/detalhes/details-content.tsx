@@ -2,7 +2,7 @@
 
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { ErrorState, LoadingState } from "@/components/query-state";
@@ -10,7 +10,7 @@ import { Status } from "@/components/status";
 import { platformService } from "@/services/platform-service";
 
 export default function MentorMentorshipDetail() {
-  const { id } = useParams<{ id: string }>();
+  const id = useSearchParams().get("id") ?? "";
   const client = useQueryClient();
   const [summary, setSummary] = useState("");
   const query = useQuery({

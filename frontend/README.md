@@ -13,6 +13,23 @@ npm run dev
 
 Acesse `http://localhost:3000`. A demonstração não exige backend, banco de dados ou senha.
 
+## GitHub Pages
+
+O projeto é exportado como site estático e publicado pelo workflow `.github/workflows/nextjs.yml` em:
+
+`https://boregs.github.io/projeto-itinerario/`
+
+Nas configurações do repositório, selecione **GitHub Actions** como fonte em **Settings → Pages**. O workflow valida lint, tipos, testes unitários, exportação estática e jornadas Playwright antes de publicar `frontend/out`.
+
+Para gerar e conferir localmente a mesma versão servida pelo GitHub Pages:
+
+```sh
+npm run build:pages
+npm run preview:pages
+```
+
+Acesse `http://localhost:3000/projeto-itinerario/`. O prefixo é aplicado somente à exportação para Pages; `npm run dev` continua disponível em `http://localhost:3000`.
+
 ## Conteúdo atual
 
 - landing page e acesso fictício como estudante;
@@ -37,8 +54,10 @@ npm run lint
 npm run typecheck
 npm test
 npm run build
+npm run build:pages
 npx playwright install chromium webkit
 npm run test:e2e
+npm run test:e2e:pages
 ```
 
 O Playwright executa a jornada crítica em telefone de 320 pixels, Android/Chromium, iPhone/WebKit, tablet e desktop. Esses testes usam emulação de navegador; não substituem validação em aparelhos físicos.

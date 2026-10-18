@@ -23,7 +23,7 @@ export default function MentorMentorshipsPage() {
         {query.data.map((item) => (
           <Link
             className="card record record-link"
-            href={`/mentor/mentorias/${item.id}`}
+            href={`/mentor/mentorias/detalhes?id=${encodeURIComponent(item.id)}`}
             key={item.id}
           >
             <div className="record-top">
